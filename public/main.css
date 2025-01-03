@@ -3,8 +3,8 @@
 }
 
 #box_header_id {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #e7e7e7;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dedede;
 }
 
 .bot_image {
@@ -13,7 +13,8 @@
 }
 
 #box_footer_id {
-  border-top: 1px solid #e7e7e7;
+  background-color: #ffffff;
+  border-top: 1px solid #dedede;
   padding: 15px;
   position: fixed;
   bottom: 0;
@@ -32,7 +33,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  height: calc(100vh - 147px);
+  height: calc(100vh - 150px);
   overflow-y: auto;
   padding-inline: 20px;
 }
