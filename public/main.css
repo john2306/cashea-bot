@@ -33,7 +33,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 160px);
   overflow-y: auto;
   padding-inline: 20px;
 }
