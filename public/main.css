@@ -12,11 +12,6 @@
   height: 77px;
 }
 
-#box_body_id {
-  padding-inline: 20px;
-  height: calc(100vh - 230px);
-  overflow-y: auto;
-}
 
 #box_footer_id {
   border-top: 1px solid #e7e7e7;
@@ -33,6 +28,9 @@
   padding: 0;
   margin: 0;
   width: 100%;
+  height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-inline: 20px;
 }
 
 #chat_list_id li {

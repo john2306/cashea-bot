@@ -1,5 +1,5 @@
 function scroll_to_bottom() {
-  $("#box_body_id").scrollTop($("#box_body_id")[0].scrollHeight);
+  $("#chat_list_id").scrollTop($("#chat_list_id")[0].scrollHeight);
 }
 scroll_to_bottom();
 
