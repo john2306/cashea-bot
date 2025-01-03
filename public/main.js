@@ -34,19 +34,25 @@ function send_message() {
   scroll_to_bottom();
   $("#query_id").val("");
 
+  let random_id = Math.random().toString(36).substring(7);
+  $("#chat_list_id").append(`
+    <li class="left" id="message_${random_id}">
+        <div id="${random_id}"></div>
+    </li>`);
+  let previous_messages = ["Pensado...", "Un momento...", "Estoy buscando la respuesta..."];
+  let random_message = previous_messages[Math.floor(Math.random() * previous_messages.length)];
+  document.getElementById(random_id).innerHTML = random_message;
+  scroll_to_bottom();
+
   $.ajax({
     type: "GET",
     url: "https://us-central1-sinfony-cbd19.cloudfunctions.net/sinfony-multi-agent-v2",
     data: data,
     success: function (data) {
       let html_content = marked(data.content);
-      let random_id = Math.random().toString(36).substring(7);
-      html_content += `<span class="time"></span>`;
-      $("#chat_list_id").append(`
-        <li class="left">
+      $(`#message_${random_id}`).append(`
             <div id="${random_id}"></div>
-            <div><b>${get_time_now()}</b></div>
-        </li>`);
+            <div><b>${get_time_now()}</b></div>`);
       document.getElementById(random_id).innerHTML = html_content;
       scroll_to_bottom();
     },
