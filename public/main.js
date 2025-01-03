@@ -27,26 +27,27 @@ function send_message() {
   let data = { query: query };
 
   $("#chat_list_id").append(`
-    <li class="right">
+    <li class="right chat_item">
         <div>${query}</div>
         <div><b>${get_time_now()}</b></div>
     </li>`);
   scroll_to_bottom();
   $("#query_id").val("");
+  $("#query_id").focus();
 
   let random_id = Math.random().toString(36).substring(7);
   $("#chat_list_id").append(`
-    <li class="left" id="message_${random_id}">
+    <li class="left chat_item" id="message_${random_id}">
         <div id="${random_id}"></div>
     </li>`);
-  let previous_messages = ["Pensado...", "Un momento...", "Estoy buscando la respuesta..."];
+  let previous_messages = ["Espere un momento...", "Un momento por favor...", "Un momento..."];
   let random_message = previous_messages[Math.floor(Math.random() * previous_messages.length)];
   document.getElementById(random_id).innerHTML = random_message;
   scroll_to_bottom();
 
   $.ajax({
     type: "GET",
-    url: "https://us-central1-sinfony-cbd19.cloudfunctions.net/sinfony-multi-agent-v2",
+    url: "https://us-central1-sinfony-cbd19.cloudfunctions.net/sinfony-multi-agent-v2", //https://us-central1-sinfony-cbd19.cloudfunctions.net/sinfony-multi-agent-v2
     data: data,
     success: function (data) {
       let html_content = marked(data.content);
