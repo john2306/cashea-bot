@@ -14,7 +14,7 @@
 
 #box_body_id {
   padding-inline: 20px;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 200px);
   overflow-y: auto;
 }
 
@@ -39,7 +39,7 @@
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
-  max-width: 80%;
+  max-width: 100%;
 }
 
 #chat_list_id .right {
