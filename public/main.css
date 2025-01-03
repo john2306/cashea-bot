@@ -14,7 +14,7 @@
 
 #box_body_id {
   padding-inline: 20px;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 230px);
   overflow-y: auto;
 }
 
